@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <form action="/home" method="post">
+        <h1>Welcome to your Home Space</h1>
+
+        <a href="/logout" style="text-align: end;">
+            <div>Log Out</div>
+        </a>
+        
+        <div class="button-panel">
+            <button value="Files" name="button">Files</button>
+            <button value="Dirs" name="button">Directories</button>
+            <button value="Space" name="button">Space</button>
+        </div>
+        
+        
+        <label>{{ nb }}</label>
+        <br>
+        <input type="text" name="file"> 
+        <button value="Search" name="button">Find</button> 
+        <button value="Load" name="button">Load</button>
+        <br>
+        <label>{{file}}</label>
+        <table class="data-table ">
+            <thead>
+                <th>Dossiers</th>
+                <th>Date de modification</th>
+                <th>Taille</th>
+            </thead>
+            <tbody>
+                {% for dir in dirs %}
+                <tr>
+                    <td><button name="button" value="{{ dir[0] }}">{{ dir[0] }}</button></td>
+                    <td>{{ dir[2] }}</td>
+                    <td>{{ dir[1] }}</td>
+                </tr>
+                {% endfor %}    
+            </tbody>
+        </table>
+        
+    </form>
+</body>
+</html>

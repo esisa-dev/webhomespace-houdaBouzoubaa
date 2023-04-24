@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authenticate</title>
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+    <center>
+
+        <h3 style="color: rgb(5, 36, 119);">Authentication</h3>
+            <form  action="/authenticate" method="post">
+        
+                <label>User</label> <br>
+                <input type="text"  name="user"/><br>
+                <label>Password</label><br>
+                <input type="password"  name="password"/>
+                <br><br>
+                    <input type="submit" value="Authenticate"></input>
+                <br><br>
+        
+            </form>
+            <p style="color: red;">{{error_auth}}</p>
+        
+        
+        </center>
+</body>
+</html>
